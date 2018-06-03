@@ -65,7 +65,21 @@
     tel.numero
     tel.verInfo()
 
-    class Celular extends telefono{
+    //Un mixin en JS es el equivalente a una interface o clase abstracta en lengias OO
+
+    const Operadora = Superclass => class extends Superclass {
+        asignarOperadora( operadora ) {
+            return c(`La operadora asignada es ${operadora}`)
+        }
+    }
+
+    const Red = Superclass => class extends Superclass {
+        asignarRed( red ) {
+            return c(`La red de datos asignada es ${red}`)
+        }
+    }
+
+    class Celular extends Operadora(Red ( telefono )){
         constructor(marca, modelo, numero){
             //con el metodo super() se manda a llamar el contructor de la clase padre
             //En el constructor de una clase hija, es obligatorio llamar a super antes de utlizar this
@@ -99,6 +113,8 @@
     cel.numero
     cel.numero = '5534948756'
     cel.numero
+    cel.asignarRed('4g')
+    cel.asignarOperadora('Telcel')
 
     class Smartphone extends Celular {
         constructor(marca, modelo, numero){
@@ -130,5 +146,7 @@
     sm.numero
     sm.numero = '5510102020'
     sm.numero
+    sm.asignarRed('5g')
+    sm.asignarOperadora('AT&T')
 
 })(console.log);
