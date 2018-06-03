@@ -28,6 +28,21 @@
     }
 
     let g4 = new Smartphone()
-    c(g4)
+    //c(g4)
+    g4.llamar()
+    //c(g4.puedoLlamar)
+    g4.vibrar()
+    //c(g4.tengoCables)
+    g4.conectar()
+    //c(g4.tengoInternet)
+
+    let nokia5120 = new Celular()
+    //c(nokia5120)
+    nokia5120.llamar()
+    //c(nokia5120.puedoLlamar)
+    nokia5120.vibrar()
+    //c(nokia5120.tengoCables)
+    nokia5120.conectar()
+    //c(nokia5120.tengoInternet)
 
 })(console.log);
